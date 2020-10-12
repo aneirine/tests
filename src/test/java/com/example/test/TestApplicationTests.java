@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
 class TestApplicationTests {
@@ -16,5 +17,13 @@ class TestApplicationTests {
         product = dollar.times(3);
         assertEquals(15, product.getAmount());
     }
+
+    @Test
+    void testEquality(){
+        assertEquals(new Dollar(5), new Dollar(5));
+        assertNotEquals(new Dollar(5), new Dollar(8));
+    }
+
+
 
 }

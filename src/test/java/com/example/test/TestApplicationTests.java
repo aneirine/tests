@@ -11,8 +11,10 @@ class TestApplicationTests {
     @Test
     void testMultiplications() {
         Dollar dollar = new Dollar(5);
-        dollar.times(2);
-        assertEquals(10, dollar.getAmount());
+        Dollar product = dollar.times(2);
+        assertEquals(10, product.getAmount());
+        product = dollar.times(3);
+        assertEquals(15, product.getAmount());
     }
 
 }

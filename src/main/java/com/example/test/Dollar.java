@@ -11,7 +11,7 @@ public class Dollar {
 
     private int amount;
 
-    public void times(int multiply) {
-        this.amount = amount * multiply;
+    public Dollar times(int multiply) {
+        return new Dollar(amount * multiply);
     }
 }

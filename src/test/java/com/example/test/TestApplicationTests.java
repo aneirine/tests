@@ -1,5 +1,8 @@
 package com.example.test;
 
+import com.example.test.money_tests.Dollar;
+import com.example.test.money_tests.Frank;
+import com.example.test.money_tests.Money;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -34,6 +37,12 @@ class TestApplicationTests {
     void testEqualityFrank() {
         assertEquals(new Frank(5), new Frank(5));
         assertNotEquals(new Frank(5), new Frank(8));
+    }
+
+    @Test
+    void testCurrency(){
+        assertEquals("USD", Money.dollar(5).currency());
+        assertEquals("CHF", Money.franc(5).currency());
     }
 
 

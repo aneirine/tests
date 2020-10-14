@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.test.money_tests;
 
 import lombok.Getter;
 
@@ -14,4 +14,8 @@ public class Frank extends Money {
     }
 
 
+    @Override
+    protected String currency() {
+        return "CHF";
+    }
 }

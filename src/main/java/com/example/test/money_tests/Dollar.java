@@ -15,7 +15,7 @@ public class Dollar extends Money {
 
 
     @Override
-    protected String currency() {
+    public String currency() {
         return "USD";
     }
 }

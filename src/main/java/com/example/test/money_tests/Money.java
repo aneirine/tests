@@ -15,7 +15,7 @@ public abstract class Money {
         return new Frank(amount);
     }
 
-    protected abstract String currency();
+    public abstract String currency();
 
     @Override
     public boolean equals(Object obj) {

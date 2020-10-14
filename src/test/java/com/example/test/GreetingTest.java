@@ -1,12 +1,18 @@
 package com.example.test;
 
 import com.example.test.greeting.Greeting;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class GreetingTest {
 
     Greeting greeting;
+    private static int number;
+
+    @BeforeAll
+    public static void beforeAllTests() {
+        number = 0;
+        System.out.println("BEFORE ALL");
+    }
 
     @BeforeEach
     void setUp() {
@@ -22,5 +28,16 @@ public class GreetingTest {
     @Test
     void helloWorld1() {
         System.out.println(greeting.helloWorld("John"));
+    }
+
+    @AfterEach
+    void testCompleted() {
+        number++;
+        System.out.println("Completed test  #" + number);
+    }
+
+    @AfterAll
+    public static void testsCompleted() {
+        System.out.println("completed all " + number + " tests");
     }
 }
